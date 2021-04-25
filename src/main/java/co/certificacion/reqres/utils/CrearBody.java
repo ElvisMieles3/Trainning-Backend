@@ -10,24 +10,23 @@ public class CrearBody {
 
     private String plantillaRuta;
 
-    public CrearBody(String plantillaRuta, String endPoint){
+    public CrearBody(String plantillaRuta, String endPoint) {
 
         this.plantillaRuta = plantillaRuta;
     }
 
-    public static CrearBody conLaPlantilla(String plantilla)
-    {
-        return new CrearBody(plantilla,null);
+    public static CrearBody conLaPlantilla(String plantilla) {
+        return new CrearBody(plantilla, null);
     }
 
-    public static  CrearBody conElEndPoint(String endPoint){
+    public static CrearBody conElEndPoint(String endPoint) {
 
-        return new CrearBody(null,endPoint);
+        return new CrearBody(null, endPoint);
     }
 
-    public String yLosValores(List<Map<String,String>> values){
+    public String yLosValores(List<Map<String, String>> values) {
         String nuevaPlantilla = parseJson(plantillaRuta);
-        for (Map<String,String> value: values) {
+        for (Map<String, String> value : values) {
             for (Map.Entry<String, String> entry : value.entrySet()) {
                 String k = entry.getKey();
                 String v = entry.getValue();
@@ -38,10 +37,10 @@ public class CrearBody {
         return nuevaPlantilla;
     }
 
-    public String parseJson(String ruta){
-        String resultStr="";
+    public String parseJson(String ruta) {
+        String resultStr = "";
         try {
-            resultStr=readFileAsString(ruta);
+            resultStr = readFileAsString(ruta);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -49,8 +48,7 @@ public class CrearBody {
         }
     }
 
-    public static String readFileAsString(String fileName)throws Exception
-    {
+    public static String readFileAsString(String fileName) throws Exception {
         String data = "";
         data = new String(Files.readAllBytes(Paths.get(fileName)));
         return data;

@@ -17,7 +17,6 @@ import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
 import net.thucydides.core.util.EnvironmentVariables;
 import org.hamcrest.Matchers;
-import org.springframework.expression.spel.ast.Elvis;
 
 import java.util.List;
 import java.util.Map;
@@ -25,7 +24,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
 
 
-public class RegistrarStepDefinitions {
+public class ConsumeServicesStep {
     private EnvironmentVariables envVars;
     private Actor analista;
 
@@ -33,7 +32,6 @@ public class RegistrarStepDefinitions {
     public void configurarElEscenario() {
 
         String baseUrl = envVars.optionalProperty("restapi.baseurl").orElseThrow(IllegalArgumentException::new);
-        //SerenityRest.setDefaultProxy(new ProxySpecification("10.101.85.253", 8080, "http"));
         SerenityRest.useRelaxedHTTPSValidation("TLS");
         OnStage.setTheStage(new OnlineCast());
         OnStage.theActorCalled("Analista"); //no se hace nada!!!

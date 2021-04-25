@@ -6,7 +6,6 @@ Característica: creacion cliente desde el servicio
   Deseo validar la funcionalidad del modulo cliente de los servicios Rest
   Para garantizar que los usuarios puedan  realizar el CRUD
 
-
   Escenario: El Analista de Calidad verifica la respuesta del servicio de registrar cliente
     Dado el Analista envia la peticion con los datos:
       | email              | password |

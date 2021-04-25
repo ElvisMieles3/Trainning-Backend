@@ -8,5 +8,5 @@ import org.junit.runner.RunWith;
 @CucumberOptions(features = "src/test/resources/features/",
         glue = {"co.certificacion.reqres.stepdefinitions"},
         snippets = SnippetType.CAMELCASE)
-public class RegistrarRunners {
+public class ConsumeServices {
 }

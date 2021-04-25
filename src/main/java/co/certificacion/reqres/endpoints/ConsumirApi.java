@@ -9,16 +9,16 @@ import net.serenitybdd.screenplay.rest.interactions.Put;
 
 public class ConsumirApi {
 
-        public static void tipoPOST( String endPoint,String body, Actor actor) {
+    public static void tipoPOST(String endPoint, String body, Actor actor) {
 
-            actor.attemptsTo(Post.to(endPoint)
-                    .with(request -> request
-                            .header("Content-Type", "application/json")
-                            .relaxedHTTPSValidation("TLS")
-                            .body(body)
-                            .log().all()));
+        actor.attemptsTo(Post.to(endPoint)
+                .with(request -> request
+                        .header("Content-Type", "application/json")
+                        .relaxedHTTPSValidation("TLS")
+                        .body(body)
+                        .log().all()));
 
-        }
+    }
 
     public static void tipoGET(String endPoint, Actor actor) {
 
@@ -43,9 +43,9 @@ public class ConsumirApi {
                         .queryParam("id", id)));
     }
 
-    public static void tipoPUT( String endPoint,String body, int id, Actor actor) {
+    public static void tipoPUT(String endPoint, String body, int id, Actor actor) {
 
-        endPoint = endPoint.replace("id", id+"");
+        endPoint = endPoint.replace("id", id + "");
         actor.attemptsTo(Put.to(endPoint)
                 .with(request -> request
                         .header("Content-Type", "application/json")
@@ -53,7 +53,5 @@ public class ConsumirApi {
                         .log().all()));
     }
 
-
-
-    }
+}
 
